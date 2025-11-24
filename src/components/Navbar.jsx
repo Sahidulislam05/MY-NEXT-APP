@@ -1,4 +1,28 @@
+import Link from "next/link";
+
 const Navbar = () => {
+  const links = (
+    <ul className="flex flex-col md:flex-row space-x-4">
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/about">About Us</Link>
+      </li>
+      <li>
+        <Link href="/products">Product</Link>
+      </li>
+      <li>
+        <Link href="/login">Login</Link>
+      </li>
+      <li>
+        <Link href="/register">Register</Link>
+      </li>
+      <li>
+        <Link href="/dashboard">Dashboard</Link>
+      </li>
+    </ul>
+  );
   return (
     <div className="bg-base-100 shadow-sm">
       <div className="navbar container mx-auto">
@@ -25,31 +49,13 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>About Us</a>
-              </li>
-              <li>
-                <a>Product</a>
-              </li>
+              {links}
             </ul>
           </div>
-          <a className="text-2xl font-semibold">MY NEXT APP</a>
+          <a className="text-xl md:text-2xl font-semibold">MY NEXT APP</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>About Us</a>
-            </li>
-            <li>
-              <a>Product</a>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           <a className="btn">Button</a>
